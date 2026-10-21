@@ -1,4 +1,4 @@
-import { Icon, type IconName } from "@/components/icons/BootstrapIcon";
+﻿import { Icon, type IconName } from "@/components/icons/BootstrapIcon";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { howItWorks, siteConfig } from "@/config/site";
 
@@ -30,10 +30,10 @@ export function HowItWorks() {
         <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
           {howItWorks.map((step) => (
             <li key={step.step} className="text-center md:text-left">
-              <div className="mx-auto flex h-12 w-12 items-center justify-center border border-line bg-white text-gold md:mx-0">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center border border-line bg-white text-dusty md:mx-0">
                 <Icon name={iconMap[step.icon]} size={18} />
               </div>
-              <p className="mt-5 font-sans text-[11px] font-medium tracking-[0.18em] text-gold uppercase">
+              <p className="mt-5 font-sans text-[11px] font-medium tracking-[0.18em] text-dusty uppercase">
                 {step.step}
               </p>
               <h3 className="mt-2 font-serif text-2xl text-ink">{step.title}</h3>

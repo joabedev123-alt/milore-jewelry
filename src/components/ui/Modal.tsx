@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   useCallback,
@@ -122,7 +122,7 @@ export function Modal({
             <button
               type="button"
               onClick={handleClose}
-              className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-ink transition-colors duration-200 hover:text-gold"
+              className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-ink transition-colors duration-200 hover:text-dusty"
               aria-label="Close"
             >
               <Icon name="x-lg" size={18} />
@@ -164,7 +164,7 @@ export function Modal({
           <button
             type="button"
             onClick={handleClose}
-            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-ink transition-colors duration-200 hover:text-gold"
+            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-ink transition-colors duration-200 hover:text-dusty"
             aria-label="Close"
           >
             <Icon name="x-lg" size={18} />

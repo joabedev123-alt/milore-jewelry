@@ -1,4 +1,4 @@
-import { Icon, type IconName } from "@/components/icons/BootstrapIcon";
+﻿import { Icon, type IconName } from "@/components/icons/BootstrapIcon";
 import { attributes } from "@/config/site";
 
 const iconMap: Record<string, IconName> = {
@@ -23,7 +23,7 @@ export function Attributes() {
               <Icon
                 name={iconMap[item.icon]}
                 size={16}
-                className="shrink-0 text-gold sm:w-[18px] sm:h-[18px]"
+                className="shrink-0 text-dusty sm:w-[18px] sm:h-[18px]"
               />
               <span className="font-sans text-[11px] font-medium tracking-[0.08em] text-ink uppercase sm:text-[13px] sm:tracking-[0.1em]">
                 {item.label}

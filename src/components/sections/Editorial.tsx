@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { editorialFeature } from "@/config/site";
 import { Icon } from "@/components/icons/BootstrapIcon";
 
@@ -39,7 +39,7 @@ export function Editorial() {
           </p>
           <a
             href={cta.href}
-            className="mt-10 inline-flex w-fit items-center gap-2 border border-white/30 px-7 py-3.5 text-[13px] font-medium tracking-[0.08em] text-white uppercase transition-colors duration-250 hover:border-gold hover:text-gold"
+            className="mt-10 inline-flex w-fit items-center gap-2 border border-white/30 px-7 py-3.5 text-[13px] font-medium tracking-[0.08em] text-white uppercase transition-colors duration-250 hover:border-dusty hover:text-dusty"
           >
             {cta.label}
             <Icon name="arrow-right" size={14} />

@@ -1,14 +1,22 @@
 @import "tailwindcss";
 
+/**
+ * Milóre Jewelry — brand palette
+ * Sand:        #D8C4AC
+ * Dusty Pink:  #C8A49F
+ * Brand ink:   #2A221E  (dark text used with brand wordmark / swatch labels)
+ */
 @theme {
   --color-white: #ffffff;
-  --color-warm: #faf8f5;
-  --color-rose-soft: #f3e5e7;
-  --color-rose: #d9b6bc;
-  --color-gold: #b39a68;
-  --color-ink: #252322;
-  --color-muted: #6f6864;
-  --color-line: #e9e3de;
+  --color-warm: #f6f1ea;
+  --color-sand: #d8c4ac;
+  --color-dusty: #c8a49f;
+  --color-rose-soft: #efe6e4;
+  --color-rose: #c8a49f;
+  --color-gold: #d8c4ac;
+  --color-ink: #2a221e;
+  --color-muted: #7a7068;
+  --color-line: #e8dfd6;
 
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
@@ -75,12 +83,12 @@
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-rose) 45%, white);
+    background: color-mix(in srgb, var(--color-dusty) 40%, white);
     color: var(--color-ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-dusty);
     outline-offset: 3px;
   }
 
@@ -108,7 +116,7 @@
   }
 
   .eyebrow {
-    @apply font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-gold sm:text-[11px] sm:tracking-[0.22em];
+    @apply font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-dusty sm:text-[11px] sm:tracking-[0.22em];
   }
 
   .text-balance {
@@ -120,15 +128,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 bg-ink px-6 py-3.5 text-[12px] font-medium tracking-[0.08em] text-white uppercase transition-colors duration-250 ease-out hover:bg-[#3a3533] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:min-h-12 sm:px-7 sm:text-[13px];
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 bg-ink px-6 py-3.5 text-[12px] font-medium tracking-[0.08em] text-white uppercase transition-colors duration-250 ease-out hover:bg-[#3d342f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dusty sm:min-h-12 sm:px-7 sm:text-[13px];
   }
 
   .btn-secondary {
-    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 border border-ink/20 bg-transparent px-6 py-3.5 text-[12px] font-medium tracking-[0.08em] text-ink uppercase transition-colors duration-250 ease-out hover:border-ink hover:bg-warm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:min-h-12 sm:px-7 sm:text-[13px];
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 border border-ink/20 bg-transparent px-6 py-3.5 text-[12px] font-medium tracking-[0.08em] text-ink uppercase transition-colors duration-250 ease-out hover:border-ink hover:bg-warm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dusty sm:min-h-12 sm:px-7 sm:text-[13px];
   }
 
   .btn-ghost {
-    @apply inline-flex min-h-11 cursor-pointer items-center gap-1.5 py-2 text-[13px] font-medium tracking-[0.06em] text-ink underline-offset-4 transition-colors duration-200 hover:text-gold hover:underline;
+    @apply inline-flex min-h-11 cursor-pointer items-center gap-1.5 py-2 text-[13px] font-medium tracking-[0.06em] text-ink underline-offset-4 transition-colors duration-200 hover:text-dusty hover:underline;
   }
 
   .link-nav {
@@ -141,10 +149,9 @@
 
   .link-nav[data-active="true"]::after {
     content: "";
-    @apply absolute -bottom-1 left-0 h-px w-full bg-gold;
+    @apply absolute -bottom-1 left-0 h-px w-full bg-dusty;
   }
 
-  /* Horizontal chip scroller for mobile filters */
   .chip-scroll {
     @apply -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0;
     -webkit-overflow-scrolling: touch;
@@ -160,7 +167,6 @@
   }
 }
 
-/* Scroll padding accounts for sticky header (top bar + main) */
 html {
   scroll-padding-top: 6.5rem;
 }

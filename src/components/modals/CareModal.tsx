@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Modal } from "@/components/ui/Modal";
 import { careTips } from "@/config/site";
@@ -14,7 +14,7 @@ export function CareModal() {
         {modal.body.map((item) => (
           <li
             key={item}
-            className="border-l border-gold/40 pl-4 text-[15px] leading-relaxed text-muted"
+            className="border-l border-dusty/40 pl-4 text-[15px] leading-relaxed text-muted"
           >
             {item}
           </li>

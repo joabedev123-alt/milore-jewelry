@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -57,7 +57,7 @@ export function ProductModal() {
                 aria-label={`View image ${i + 1}`}
                 onClick={() => setActiveIndex(i)}
                 className={`relative h-16 w-14 cursor-pointer overflow-hidden ${
-                  i === activeIndex ? "ring-1 ring-gold" : "opacity-70"
+                  i === activeIndex ? "ring-1 ring-dusty" : "opacity-70"
                 }`}
               >
                 <Image

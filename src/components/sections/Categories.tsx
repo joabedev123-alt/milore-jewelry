@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { Icon } from "@/components/icons/BootstrapIcon";
@@ -39,7 +39,7 @@ export function Categories() {
                   type="button"
                   onClick={() => applyCategoryFilter(cat.id)}
                   className={`group relative block w-full cursor-pointer overflow-hidden text-left transition-[box-shadow] duration-250 ${
-                    isActive ? "ring-1 ring-gold" : ""
+                    isActive ? "ring-1 ring-dusty" : ""
                   }`}
                   aria-pressed={isActive}
                 >
@@ -70,7 +70,7 @@ export function Categories() {
                     <Icon
                       name="arrow-right"
                       size={14}
-                      className="shrink-0 text-gold transition-transform duration-250 group-hover:translate-x-1"
+                      className="shrink-0 text-dusty transition-transform duration-250 group-hover:translate-x-1"
                     />
                   </div>
                 </button>

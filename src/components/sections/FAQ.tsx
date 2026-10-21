@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Icon } from "@/components/icons/BootstrapIcon";
@@ -38,7 +38,7 @@ export function FAQ() {
                     aria-expanded={isOpen}
                     aria-controls={`${item.id}-panel`}
                     onClick={() => setOpenId(isOpen ? null : item.id)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left transition-colors duration-200 hover:text-gold"
+                    className="flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left transition-colors duration-200 hover:text-dusty"
                   >
                     <span className="font-serif text-xl text-ink md:text-[1.35rem]">
                       {item.question}
@@ -46,7 +46,7 @@ export function FAQ() {
                     <Icon
                       name={isOpen ? "dash" : "plus"}
                       size={16}
-                      className="shrink-0 text-gold"
+                      className="shrink-0 text-dusty"
                     />
                   </button>
                 </h3>

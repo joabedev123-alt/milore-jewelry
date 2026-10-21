@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useId, useRef, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
@@ -98,7 +98,7 @@ export function Header() {
   return (
     <header ref={headerRef} className="sticky top-0 z-40">
       {/* Top bar */}
-      <div className="bg-rose-soft/70 text-center">
+      <div className="bg-sand/45 text-center">
         <div className="container-site flex flex-col items-center justify-center gap-0.5 py-2 text-[11px] tracking-[0.03em] text-ink/80 sm:flex-row sm:gap-x-4 sm:py-2.5 sm:text-[12px] sm:tracking-[0.04em]">
           <span>{siteConfig.announcements.topBar}</span>
           <a
@@ -147,7 +147,7 @@ export function Header() {
           <div className="hidden items-center gap-4 lg:flex">
             <ExternalLink
               href={siteConfig.social.instagram.url}
-              className="flex h-11 w-11 cursor-pointer items-center justify-center text-ink transition-colors duration-200 hover:text-gold"
+              className="flex h-11 w-11 cursor-pointer items-center justify-center text-ink transition-colors duration-200 hover:text-dusty"
               aria-label={`Follow Milóre on Instagram ${siteConfig.social.instagram.handle}`}
             >
               <Icon name="instagram" size={18} />
@@ -196,7 +196,7 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="border-b border-line py-3.5 font-serif text-[1.35rem] text-ink transition-colors duration-200 hover:text-gold sm:py-4 sm:text-2xl"
+                  className="border-b border-line py-3.5 font-serif text-[1.35rem] text-ink transition-colors duration-200 hover:text-dusty sm:py-4 sm:text-2xl"
                   onClick={closeMenu}
                 >
                   {link.label}
