@@ -202,3 +202,8 @@ body.menu-open,
 body.modal-open {
   overflow: hidden;
 }
+
+body.menu-open .back-to-top,
+body.modal-open .back-to-top {
+  display: none;
+}
