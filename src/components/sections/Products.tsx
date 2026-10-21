@@ -16,7 +16,8 @@ export function Products() {
   return (
     <section
       id="jewelry"
-      className="section-pad bg-sand/50"
+      className="section-pad !pt-8 sm:!pt-14 md:!pt-20"
+      style={{ backgroundColor: "#E8C9C6" }}
       aria-labelledby="jewelry-heading"
     >
       <div className="container-site">
@@ -43,11 +44,11 @@ export function Products() {
                 role="tab"
                 aria-selected={filter === f.id}
                 onClick={() => setFilter(f.id)}
-                className={`inline-flex min-h-11 shrink-0 cursor-pointer items-center px-4 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-200 sm:text-[12px] ${
-                  filter === f.id
-                    ? "bg-dusty text-white"
-                    : "bg-warm text-ink hover:bg-dusty/20"
-                }`}
+                className="inline-flex min-h-11 shrink-0 cursor-pointer items-center px-4 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-200 sm:text-[12px]"
+                style={{
+                  backgroundColor: filter === f.id ? "#C9A49F" : "#F5EAE6",
+                  color: filter === f.id ? "#FFFFFF" : "#8C6239",
+                }}
               >
                 {f.label}
               </button>
@@ -100,21 +101,21 @@ export function Products() {
                   </button>
 
                   <div className="mt-3 sm:mt-4">
-                    <h3 className="font-serif text-base text-ink sm:text-xl">
+                    <h3 className="font-serif text-base sm:text-xl">
                       {product.name}
                     </h3>
                     <p className="mt-0.5 text-[12px] text-muted sm:mt-1 sm:text-[13px]">
                       {product.material}
                     </p>
                     {product.priceUsd != null && (
-                      <p className="mt-1 text-[14px] text-ink">
+                      <p className="mt-1 text-[14px]" style={{ color: "#8C6239" }}>
                         ${product.priceUsd.toFixed(2)}
                       </p>
                     )}
                     <button
                       type="button"
                       onClick={() => openProduct(product)}
-                      className="btn-ghost mt-2 min-h-10 text-[12px] sm:mt-3 sm:min-h-11 sm:text-[13px]"
+                      className="btn-ghost mt-2 min-h-11 w-full justify-start text-[12px] sm:mt-3 sm:w-auto sm:text-[13px]"
                     >
                       View Details
                       <Icon name="arrow-right" size={14} />

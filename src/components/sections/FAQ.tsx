@@ -13,7 +13,8 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="section-pad bg-dusty/20"
+      className="section-pad"
+      style={{ backgroundColor: "#F5EAE6" }}
       aria-labelledby="faq-heading"
     >
       <div className="container-site">
@@ -40,13 +41,17 @@ export function FAQ() {
                     onClick={() => setOpenId(isOpen ? null : item.id)}
                     className="flex min-h-14 w-full cursor-pointer items-center justify-between gap-4 py-4 text-left transition-colors duration-200 hover:text-dusty sm:min-h-0 sm:py-5"
                   >
-                    <span className="font-serif text-lg text-ink sm:text-xl md:text-[1.35rem]">
+                    <span
+                      className="font-serif text-lg sm:text-xl md:text-[1.35rem]"
+                      style={{ color: "#8C6239" }}
+                    >
                       {item.question}
                     </span>
                     <Icon
                       name={isOpen ? "dash" : "plus"}
                       size={16}
-                      className="shrink-0 text-dusty"
+                      className="shrink-0"
+                      style={{ color: "#C9A49F" }}
                     />
                   </button>
                 </h3>

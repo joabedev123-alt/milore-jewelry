@@ -110,19 +110,24 @@ export function Modal({
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="relative z-10 flex h-full w-full max-w-full flex-col bg-warm shadow-[-8px_0_40px_rgba(37,35,34,0.08)] animate-[slide-up_0.28s_ease-out] sm:max-w-lg"
+          className="relative z-10 flex h-full w-full max-w-full flex-col shadow-[-8px_0_40px_rgba(92,74,70,0.12)] animate-[slide-up_0.28s_ease-out] sm:max-w-lg"
+          style={{ backgroundColor: "#F5EAE6" }}
         >
-          <div className="flex items-center justify-between border-b border-line px-4 py-4 sm:px-6 sm:py-5">
+          <div
+            className="flex items-center justify-between border-b border-line px-4 py-4 sm:px-6 sm:py-5"
+            style={{ backgroundColor: "#F5EAE6" }}
+          >
             <h2
               id={titleId}
-              className="pr-2 font-serif text-xl text-ink sm:text-2xl"
+              className="pr-2 font-serif text-xl sm:text-2xl"
             >
               {title}
             </h2>
             <button
               type="button"
               onClick={handleClose}
-              className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-ink transition-colors duration-200 hover:text-dusty"
+              className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center transition-opacity duration-200 hover:opacity-70"
+              style={{ color: "#8C6239" }}
               aria-label="Close"
             >
               <Icon name="x-lg" size={18} />
@@ -152,23 +157,29 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className={`relative z-10 max-h-[92dvh] w-full overflow-y-auto overscroll-contain rounded-t-2xl bg-warm animate-[fade-in_0.25s_ease-out] sm:max-h-[90vh] sm:rounded-none ${sizeClass}`}
+        className={`relative z-10 max-h-[92dvh] w-full overflow-y-auto overscroll-contain rounded-t-2xl animate-[fade-in_0.25s_ease-out] sm:max-h-[90vh] sm:rounded-none ${sizeClass}`}
+        style={{ backgroundColor: "#F5EAE6" }}
       >
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-warm px-4 pt-5 pb-4 sm:px-6 sm:pt-5 sm:py-5">
+        <div
+          className="sticky top-0 z-10 flex items-center justify-between border-b border-line px-4 pt-5 pb-4 sm:px-6 sm:pt-5 sm:py-5"
+          style={{ backgroundColor: "#F5EAE6" }}
+        >
           <div
-            className="absolute top-2.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-line sm:hidden"
+            className="absolute top-2.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full sm:hidden"
+            style={{ backgroundColor: "#C9A49F" }}
             aria-hidden
           />
           <h2
             id={titleId}
-            className="relative pr-2 font-serif text-xl text-ink sm:text-2xl"
+            className="relative pr-2 font-serif text-xl sm:text-2xl"
           >
             {title}
           </h2>
           <button
             type="button"
             onClick={handleClose}
-            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-ink transition-colors duration-200 hover:text-dusty"
+            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center transition-opacity duration-200 hover:opacity-70"
+            style={{ color: "#8C6239" }}
             aria-label="Close"
           >
             <Icon name="x-lg" size={18} />

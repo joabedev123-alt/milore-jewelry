@@ -3,8 +3,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { Hero } from "@/components/sections/Hero";
-import { Attributes } from "@/components/sections/Attributes";
-import { Categories } from "@/components/sections/Categories";
 import { Products } from "@/components/sections/Products";
 import { About } from "@/components/sections/About";
 import { Editorial } from "@/components/sections/Editorial";
@@ -22,8 +20,6 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <Attributes />
-        <Categories />
         <Products />
         <About />
         <Editorial />

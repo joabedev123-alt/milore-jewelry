@@ -22,7 +22,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   viewportFit: "cover",
-  themeColor: "#D8C4AC",
+  themeColor: "#C9A49F", // Dusk Rose — brand board
 };
 
 export const metadata: Metadata = {

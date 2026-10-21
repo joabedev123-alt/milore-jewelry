@@ -8,12 +8,11 @@ import { navLinks, siteConfig } from "@/config/site";
 
 const SECTION_IDS = [
   "home",
-  "collections",
+  "jewelry",
   "about",
   "care",
   "faq",
   "contact",
-  "jewelry",
   "instagram",
 ];
 
@@ -57,7 +56,7 @@ export function Header() {
         ([entry]) => {
           if (entry.isIntersecting) {
             const map: Record<string, string> = {
-              jewelry: "collections",
+              jewelry: "jewelry",
               instagram: "contact",
             };
             setActive(map[id] ?? id);
@@ -109,7 +108,7 @@ export function Header() {
   return (
     <header ref={headerRef} className="sticky top-0 z-40">
       {/* Top bar */}
-      <div className="bg-dusty text-center">
+      <div className="text-center" style={{ backgroundColor: "#C9A49F" }}>
         <div className="container-site flex flex-col items-center justify-center gap-0.5 py-1.5 text-[11px] tracking-[0.03em] text-white sm:flex-row sm:gap-x-4 sm:py-2.5 sm:text-[12px] sm:tracking-[0.04em]">
           <span>{siteConfig.announcements.topBar}</span>
           <a
@@ -123,11 +122,12 @@ export function Header() {
 
       {/* Main header */}
       <div
-        className={`border-b bg-sand/95 backdrop-blur-sm transition-[border-color,box-shadow] duration-250 ${
+        className={`border-b backdrop-blur-sm transition-[border-color,box-shadow] duration-250 ${
           scrolled
-            ? "border-line shadow-[0_1px_0_rgba(31,26,23,0.06)]"
-            : "border-dusty/40"
+            ? "border-line shadow-[0_1px_0_rgba(42,34,31,0.06)]"
+            : "border-[#C9A49F]/40"
         }`}
+        style={{ backgroundColor: "rgba(245, 234, 230, 0.95)" }}
       >
         <div className="container-site flex h-14 items-center justify-between gap-3 sm:h-[4.25rem] md:h-[4.75rem]">
           <a
@@ -158,7 +158,8 @@ export function Header() {
           <div className="hidden items-center gap-4 lg:flex">
             <ExternalLink
               href={siteConfig.social.instagram.url}
-              className="flex h-11 w-11 cursor-pointer items-center justify-center text-ink transition-colors duration-200 hover:text-dusty"
+              className="flex h-11 w-11 cursor-pointer items-center justify-center transition-colors duration-200 hover:opacity-70"
+              style={{ color: "#8C6239" }}
               aria-label={`Follow Milóre on Instagram ${siteConfig.social.instagram.handle}`}
             >
               <Icon name="instagram" size={18} />
@@ -171,7 +172,8 @@ export function Header() {
           <button
             ref={menuButtonRef}
             type="button"
-            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center text-ink lg:hidden"
+            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center lg:hidden"
+            style={{ color: "#8C6239" }}
             aria-expanded={menuOpen}
             aria-controls={menuId}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -207,7 +209,7 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="border-b border-line py-3.5 font-serif text-[1.35rem] text-ink transition-colors duration-200 hover:text-dusty sm:py-4 sm:text-2xl"
+                  className="border-b border-line py-3.5 font-serif text-[1.35rem] transition-colors duration-200 hover:opacity-70 sm:py-4 sm:text-2xl"
                   onClick={closeMenu}
                 >
                   {link.label}

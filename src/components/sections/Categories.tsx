@@ -12,7 +12,7 @@ export function Categories() {
   return (
     <section
       id="collections"
-      className="section-pad bg-warm/80"
+      className="section-pad bg-warm/80 !pt-8 sm:!pt-14 md:!pt-20"
       aria-labelledby="collections-heading"
     >
       <div className="container-site">

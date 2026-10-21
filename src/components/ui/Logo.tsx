@@ -29,7 +29,8 @@ export function Logo({ className = "", size = "md" }: LogoProps) {
 
   return (
     <span
-      className={`font-serif font-medium tracking-[0.02em] text-ink ${textSize} ${className}`}
+      className={`font-serif font-medium tracking-[0.02em] ${textSize} ${className}`}
+      style={{ color: "#8C6239" }}
     >
       {siteConfig.brand.wordmark}
     </span>

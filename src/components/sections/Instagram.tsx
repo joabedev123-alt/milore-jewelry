@@ -7,7 +7,8 @@ export function Instagram() {
   return (
     <section
       id="instagram"
-      className="section-pad bg-sand/60"
+      className="section-pad"
+      style={{ backgroundColor: "#E8C9C6" }}
       aria-labelledby="instagram-heading"
     >
       <div className="container-site">

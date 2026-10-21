@@ -7,7 +7,8 @@ export function About() {
   return (
     <section
       id="about"
-      className="section-pad bg-dusty/25"
+      className="section-pad"
+      style={{ backgroundColor: "#F5EAE6" }}
       aria-labelledby="about-heading"
     >
       <div className="container-site">

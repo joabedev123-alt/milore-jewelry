@@ -10,7 +10,8 @@ export function Reviews() {
 
   return (
     <section
-      className="section-pad bg-sand/70"
+      className="section-pad"
+      style={{ backgroundColor: "#F5EAE6" }}
       aria-labelledby="reviews-heading"
     >
       <div className="container-site">

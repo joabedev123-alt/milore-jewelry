@@ -112,10 +112,12 @@ export function ProductModal() {
           <p className="mt-2 text-[14px] text-muted">{selectedProduct.care}</p>
         </div>
 
-        <ExternalLink href={waUrl} className="btn-primary w-full">
-          <Icon name="whatsapp" size={16} />
-          Ask About This Piece
-        </ExternalLink>
+        <div className="sticky bottom-0 -mx-4 border-t border-line px-4 pt-4 sm:static sm:mx-0 sm:border-0 sm:px-0 sm:pt-0" style={{ backgroundColor: "#F5EAE6" }}>
+          <ExternalLink href={waUrl} className="btn-primary w-full">
+            <Icon name="whatsapp" size={16} />
+            Ask About This Piece
+          </ExternalLink>
+        </div>
       </div>
     </Modal>
   );

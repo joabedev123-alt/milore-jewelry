@@ -6,7 +6,8 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="section-pad bg-dusty/40"
+      className="section-pad"
+      style={{ backgroundColor: "#E8C9C6" }}
       aria-labelledby="contact-heading"
     >
       <div className="container-site">

@@ -11,7 +11,8 @@ export function Care() {
   return (
     <section
       id="care"
-      className="section-pad bg-dusty/30"
+      className="section-pad"
+      style={{ backgroundColor: "#E8C9C6" }}
       aria-labelledby="care-heading"
     >
       <div className="container-site">
@@ -25,7 +26,7 @@ export function Care() {
             <ul className="mt-9 space-y-6">
               {careTips.summary.map((tip) => (
                 <li key={tip.title} className="border-l border-dusty/50 pl-5">
-                  <h3 className="font-serif text-xl text-ink">{tip.title}</h3>
+                  <h3 className="font-serif text-xl">{tip.title}</h3>
                   <p className="mt-1 text-[15px] text-muted">{tip.text}</p>
                 </li>
               ))}

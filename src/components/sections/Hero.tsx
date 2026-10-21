@@ -5,17 +5,18 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-sand"
+      className="relative overflow-hidden"
+      style={{ backgroundColor: "#F5EAE6" }}
       aria-label={`${heroContent.headline[0]} ${heroContent.headline[1]}`}
     >
       <div className="container-site">
-        <div className="grid items-center gap-0 py-3 sm:py-4 lg:grid-cols-12 lg:gap-10 lg:py-12 xl:gap-12 xl:py-14">
+        <div className="grid items-center gap-0 py-2 pb-0 sm:py-4 sm:pb-0 lg:grid-cols-12 lg:gap-10 lg:py-12 lg:pb-12 xl:gap-12 xl:py-14 xl:pb-14">
           {/* Copy — desktop only */}
           <div className="relative z-10 hidden lg:col-span-5 lg:flex lg:flex-col lg:justify-center lg:pr-2">
             <p className="eyebrow animate-[fade-in_0.5s_ease-out]">
               {heroContent.eyebrow}
             </p>
-            <h1 className="mt-4 font-serif text-[2.75rem] leading-[1.12] text-ink xl:text-[3.25rem] animate-[slide-up_0.55s_ease-out] text-balance">
+            <h1 className="mt-4 font-serif text-[2.75rem] leading-[1.12] xl:text-[3.25rem] animate-[slide-up_0.55s_ease-out] text-balance">
               {heroContent.headline[0]}
               <br />
               {heroContent.headline[1]}
@@ -44,7 +45,10 @@ export function Hero() {
 
           {/* Editorial image — square on desktop, matched to copy height */}
           <div className="relative lg:col-span-7 lg:flex lg:justify-end">
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-sand max-h-[70vw] min-h-[280px] sm:max-h-none sm:min-h-0 sm:aspect-[5/6] lg:aspect-square lg:max-h-[420px] lg:w-full lg:max-w-[420px] xl:max-h-[460px] xl:max-w-[460px]">
+            <div
+              className="relative aspect-[4/5] w-full overflow-hidden max-h-[min(72vw,52vh)] min-h-[240px] sm:max-h-none sm:min-h-0 sm:aspect-[5/6] lg:aspect-square lg:max-h-[420px] lg:w-full lg:max-w-[420px] xl:max-h-[460px] xl:max-w-[460px]"
+              style={{ backgroundColor: "#E8C9C6" }}
+            >
               <Image
                 src={heroContent.image.src}
                 alt={heroContent.image.alt}

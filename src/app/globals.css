@@ -1,22 +1,36 @@
 @import "tailwindcss";
 
 /**
- * Milóre Jewelry — brand palette (from official swatches)
- * Sand:        #D8C4AC
- * Dusty Pink:  #C8A49F
- * Brand ink:   #1F1A17  (dark text on the swatches / wordmark)
+ * Milóre Jewelry — brand palette (identity board)
+ * Dusk Rose:    #C9A49F
+ * Soft Blush:   #E8C9C6
+ * Champagne:    #F5EAE6
+ * White:        #FFFFFF
+ * Gold foil:    #8C6239  (titles / logo — as on packaging)
+ * Body text:    #5C4A46  (soft charcoal-rose for readability)
  */
+:root {
+  --brand-dusk: #c9a49f;
+  --brand-blush: #e8c9c6;
+  --brand-champagne: #f5eae6;
+  --brand-white: #ffffff;
+  --brand-gold: #8c6239;
+  --brand-ink: #5c4a46;
+  --brand-muted: #8a7570;
+  --brand-line: #e0d0cc;
+}
+
 @theme {
   --color-white: #ffffff;
-  --color-sand: #d8c4ac;
-  --color-dusty: #c8a49f;
-  --color-warm: #e6d5c0;
-  --color-rose-soft: #c8a49f;
-  --color-rose: #c8a49f;
-  --color-gold: #d8c4ac;
-  --color-ink: #1f1a17;
-  --color-muted: #5c534c;
-  --color-line: #b9a48f;
+  --color-sand: #f5eae6;
+  --color-dusty: #c9a49f;
+  --color-warm: #e8c9c6;
+  --color-rose-soft: #e8c9c6;
+  --color-rose: #c9a49f;
+  --color-gold: #8c6239;
+  --color-ink: #5c4a46;
+  --color-muted: #8a7570;
+  --color-line: #e0d0cc;
 
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
@@ -70,7 +84,9 @@
   }
 
   body {
-    @apply bg-sand text-ink font-sans antialiased;
+    @apply font-sans antialiased;
+    background-color: #f5eae6;
+    color: #5c4a46;
     font-size: 16px;
     line-height: 1.65;
     overflow-x: hidden;
@@ -83,12 +99,12 @@
   }
 
   ::selection {
-    background: var(--color-dusty);
-    color: var(--color-white);
+    background: #c9a49f;
+    color: #ffffff;
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-dusty);
+    outline: 2px solid #c9a49f;
     outline-offset: 3px;
   }
 
@@ -97,8 +113,10 @@
   h3,
   h4 {
     font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-    @apply font-medium tracking-tight text-ink;
+    font-weight: 500;
+    letter-spacing: -0.02em;
     line-height: 1.15;
+    color: #8c6239 !important;
   }
 }
 
@@ -112,11 +130,12 @@
   }
 
   .section-pad {
-    @apply py-14 sm:py-20 md:py-28 lg:py-32;
+    @apply py-12 sm:py-20 md:py-28 lg:py-32;
   }
 
   .eyebrow {
-    @apply font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-dusty sm:text-[11px] sm:tracking-[0.22em];
+    @apply font-sans text-[10px] font-medium uppercase tracking-[0.2em] sm:text-[11px] sm:tracking-[0.22em];
+    color: #c9a49f;
   }
 
   .text-balance {
@@ -124,32 +143,66 @@
   }
 
   .divider-soft {
-    @apply border-t border-line;
+    border-top: 1px solid #e0d0cc;
   }
 
   .btn-primary {
-    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 bg-dusty px-6 py-3.5 text-[12px] font-medium tracking-[0.08em] text-white uppercase transition-colors duration-250 ease-out hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand sm:min-h-12 sm:px-7 sm:text-[13px];
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 px-6 py-3.5 text-[12px] font-medium tracking-[0.08em] uppercase transition-colors duration-250 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:min-h-12 sm:px-7 sm:text-[13px];
+    background-color: #c9a49f;
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background-color: #8c6239;
+    color: #ffffff;
+  }
+
+  .btn-primary:focus-visible {
+    outline-color: #8c6239;
   }
 
   .btn-secondary {
-    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 border border-ink/25 bg-transparent px-6 py-3.5 text-[12px] font-medium tracking-[0.08em] text-ink uppercase transition-colors duration-250 ease-out hover:border-dusty hover:bg-sand/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dusty sm:min-h-12 sm:px-7 sm:text-[13px];
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 border bg-transparent px-6 py-3.5 text-[12px] font-medium tracking-[0.08em] uppercase transition-colors duration-250 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:min-h-12 sm:px-7 sm:text-[13px];
+    border-color: #c9a49f;
+    color: #8c6239;
+  }
+
+  .btn-secondary:hover {
+    border-color: #8c6239;
+    background-color: #e8c9c6;
+    color: #8c6239;
+  }
+
+  .btn-secondary:focus-visible {
+    outline-color: #c9a49f;
   }
 
   .btn-ghost {
-    @apply inline-flex min-h-11 cursor-pointer items-center gap-1.5 py-2 text-[13px] font-medium tracking-[0.06em] text-ink underline-offset-4 transition-colors duration-200 hover:text-dusty hover:underline;
+    @apply inline-flex min-h-11 cursor-pointer items-center gap-1.5 py-2 text-[13px] font-medium tracking-[0.06em] underline-offset-4 transition-colors duration-200 hover:underline;
+    color: #8c6239;
+  }
+
+  .btn-ghost:hover {
+    color: #c9a49f;
   }
 
   .link-nav {
-    @apply relative cursor-pointer text-[13px] font-medium tracking-[0.04em] text-ink/80 transition-colors duration-200 hover:text-ink;
+    @apply relative cursor-pointer text-[13px] font-medium tracking-[0.04em] transition-colors duration-200;
+    color: #5c4a46;
+  }
+
+  .link-nav:hover {
+    color: #8c6239;
   }
 
   .link-nav[data-active="true"] {
-    @apply text-ink;
+    color: #8c6239;
   }
 
   .link-nav[data-active="true"]::after {
     content: "";
-    @apply absolute -bottom-1 left-0 h-px w-full bg-dusty;
+    @apply absolute -bottom-1 left-0 h-px w-full;
+    background-color: #c9a49f;
   }
 
   .chip-scroll {
@@ -166,13 +219,14 @@
     padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 
-  /* Shared media frame — mobile matches hero; desktop aspect set per section */
   .media-frame {
-    @apply relative aspect-[4/5] w-full overflow-hidden bg-sand max-h-[min(70vw,55vh)] min-h-[240px] sm:max-h-none sm:min-h-0 sm:aspect-[5/6] lg:aspect-[4/5] lg:max-h-none lg:min-h-0;
+    @apply relative aspect-[4/5] w-full overflow-hidden max-h-[min(70vw,55vh)] min-h-[240px] sm:max-h-none sm:min-h-0 sm:aspect-[5/6] lg:aspect-[4/5] lg:max-h-none lg:min-h-0;
+    background-color: #e8c9c6;
   }
 
   .media-frame-drawer {
-    @apply relative aspect-square w-full overflow-hidden bg-sand max-h-[42vh] sm:aspect-[4/5] sm:max-h-none;
+    @apply relative aspect-square w-full overflow-hidden max-h-[42vh] sm:aspect-[4/5] sm:max-h-none;
+    background-color: #e8c9c6;
   }
 
   .media-cover {
@@ -180,11 +234,17 @@
   }
 
   .link-touch {
-    @apply inline-flex min-h-11 items-center text-[15px] text-muted transition-colors duration-200 hover:text-ink;
+    @apply inline-flex min-h-11 items-center text-[15px] transition-colors duration-200;
+    color: #8a7570;
+  }
+
+  .link-touch:hover {
+    color: #8c6239;
   }
 
   .section-title {
-    @apply font-serif text-[2rem] leading-tight text-ink text-balance sm:text-4xl md:text-5xl;
+    @apply font-serif text-[2rem] leading-tight text-balance sm:text-4xl md:text-5xl;
+    color: #8c6239;
   }
 }
 

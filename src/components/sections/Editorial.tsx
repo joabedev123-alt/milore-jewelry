@@ -7,7 +7,8 @@ export function Editorial() {
 
   return (
     <section
-      className="relative overflow-hidden bg-dusty"
+      className="relative overflow-hidden"
+      style={{ backgroundColor: "#C9A49F" }}
       aria-labelledby="editorial-heading"
     >
       <div className="grid lg:grid-cols-2">
@@ -27,10 +28,14 @@ export function Editorial() {
           )}
         </div>
 
-        <div className="flex flex-col justify-center bg-dusty px-5 py-12 text-white sm:px-12 sm:py-16 lg:px-16 xl:px-20">
+        <div
+          className="flex flex-col justify-center px-5 py-12 text-white sm:px-12 sm:py-16 lg:px-16 xl:px-20"
+          style={{ backgroundColor: "#C9A49F" }}
+        >
           <h2
             id="editorial-heading"
             className="font-serif text-[2rem] leading-tight text-balance sm:text-4xl md:text-5xl"
+            style={{ color: "#FFFFFF" }}
           >
             {title}
           </h2>
@@ -39,7 +44,8 @@ export function Editorial() {
           </p>
           <a
             href={cta.href}
-            className="mt-8 inline-flex min-h-11 w-full items-center justify-center gap-2 border border-white/50 bg-ink px-7 py-3.5 text-[12px] font-medium tracking-[0.08em] text-white uppercase transition-colors duration-250 hover:bg-sand hover:text-ink hover:border-sand sm:mt-10 sm:w-fit sm:text-[13px]"
+            className="mt-8 inline-flex min-h-11 w-full items-center justify-center gap-2 border border-white/50 px-7 py-3.5 text-[12px] font-medium tracking-[0.08em] text-white uppercase transition-colors duration-250 sm:mt-10 sm:w-fit sm:text-[13px]"
+            style={{ backgroundColor: "#8C6239" }}
           >
             {cta.label}
             <Icon name="arrow-right" size={14} />

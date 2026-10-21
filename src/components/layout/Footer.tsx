@@ -12,7 +12,7 @@ export function Footer() {
   const { policies } = siteConfig;
 
   return (
-    <footer className="border-t border-line bg-sand">
+    <footer className="border-t border-line" style={{ backgroundColor: "#F5EAE6" }}>
       <div className="container-site section-pad !pb-12 !pt-16 md:!pt-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {/* Brand */}
@@ -27,13 +27,16 @@ export function Footer() {
 
           {/* Explore */}
           <div>
-            <h3 className="font-sans text-[11px] font-medium uppercase tracking-[0.18em] text-ink">
+            <h3
+              className="font-sans text-[11px] font-medium uppercase tracking-[0.18em]"
+              style={{ color: "#8C6239" }}
+            >
               Explore
             </h3>
             <ul className="mt-4 space-y-0">
               {[
                 { label: "Home", href: "#home" },
-                { label: "Collections", href: "#collections" },
+                { label: "Collections", href: "#jewelry" },
                 { label: "Our Story", href: "#about" },
                 { label: "Jewelry Care", href: "#care" },
               ].map((item) => (
@@ -48,7 +51,10 @@ export function Footer() {
 
           {/* Customer Care */}
           <div>
-            <h3 className="font-sans text-[11px] font-medium uppercase tracking-[0.18em] text-ink">
+            <h3
+              className="font-sans text-[11px] font-medium uppercase tracking-[0.18em]"
+              style={{ color: "#8C6239" }}
+            >
               Customer Care
             </h3>
             <ul className="mt-4 space-y-0">
@@ -89,7 +95,10 @@ export function Footer() {
 
           {/* Connect */}
           <div>
-            <h3 className="font-sans text-[11px] font-medium uppercase tracking-[0.18em] text-ink">
+            <h3
+              className="font-sans text-[11px] font-medium uppercase tracking-[0.18em]"
+              style={{ color: "#8C6239" }}
+            >
               Connect
             </h3>
             <ul className="mt-4 space-y-0">

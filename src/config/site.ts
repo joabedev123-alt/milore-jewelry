@@ -437,7 +437,7 @@ export const faqItems = [
 
 export const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Collections", href: "#collections" },
+  { label: "Collections", href: "#jewelry" },
   { label: "Our Story", href: "#about" },
   { label: "Jewelry Care", href: "#care" },
   { label: "FAQ", href: "#faq" },
