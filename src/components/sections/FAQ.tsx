@@ -13,20 +13,20 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="section-pad bg-warm"
+      className="section-pad bg-dusty/20"
       aria-labelledby="faq-heading"
     >
       <div className="container-site">
         <div className="mx-auto max-w-2xl text-center">
           <h2
             id="faq-heading"
-            className="font-serif text-4xl text-ink md:text-5xl text-balance"
+            className="section-title"
           >
             A few things you may be wondering.
           </h2>
         </div>
 
-        <div className="mx-auto mt-12 max-w-2xl divide-y divide-line border-y border-line">
+        <div className="mx-auto mt-10 max-w-2xl divide-y divide-line border-y border-line sm:mt-12">
           {faqItems.map((item) => {
             const isOpen = openId === item.id;
             return (
@@ -38,9 +38,9 @@ export function FAQ() {
                     aria-expanded={isOpen}
                     aria-controls={`${item.id}-panel`}
                     onClick={() => setOpenId(isOpen ? null : item.id)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left transition-colors duration-200 hover:text-dusty"
+                    className="flex min-h-14 w-full cursor-pointer items-center justify-between gap-4 py-4 text-left transition-colors duration-200 hover:text-dusty sm:min-h-0 sm:py-5"
                   >
-                    <span className="font-serif text-xl text-ink md:text-[1.35rem]">
+                    <span className="font-serif text-lg text-ink sm:text-xl md:text-[1.35rem]">
                       {item.question}
                     </span>
                     <Icon

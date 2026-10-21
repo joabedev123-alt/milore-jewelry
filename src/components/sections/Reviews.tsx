@@ -10,14 +10,14 @@ export function Reviews() {
 
   return (
     <section
-      className="section-pad bg-white"
+      className="section-pad bg-sand/70"
       aria-labelledby="reviews-heading"
     >
       <div className="container-site">
         <div className="mx-auto max-w-2xl text-center">
           <h2
             id="reviews-heading"
-            className="font-serif text-4xl text-ink md:text-5xl"
+            className="section-title"
           >
             Words from our customers.
           </h2>

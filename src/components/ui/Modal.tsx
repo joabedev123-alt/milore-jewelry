@@ -110,7 +110,7 @@ export function Modal({
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="relative z-10 flex h-full w-full max-w-full flex-col bg-white shadow-[-8px_0_40px_rgba(37,35,34,0.08)] animate-[slide-up_0.28s_ease-out] sm:max-w-lg"
+          className="relative z-10 flex h-full w-full max-w-full flex-col bg-warm shadow-[-8px_0_40px_rgba(37,35,34,0.08)] animate-[slide-up_0.28s_ease-out] sm:max-w-lg"
         >
           <div className="flex items-center justify-between border-b border-line px-4 py-4 sm:px-6 sm:py-5">
             <h2
@@ -128,7 +128,7 @@ export function Modal({
               <Icon name="x-lg" size={18} />
             </button>
           </div>
-          <div className="flex-1 overflow-y-auto px-4 py-5 safe-bottom sm:px-6 sm:py-6">
+          <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-5 safe-bottom sm:px-6 sm:py-6">
             {children}
           </div>
         </div>
@@ -152,12 +152,16 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className={`relative z-10 max-h-[92dvh] w-full overflow-y-auto bg-white animate-[fade-in_0.25s_ease-out] sm:max-h-[90vh] ${sizeClass}`}
+        className={`relative z-10 max-h-[92dvh] w-full overflow-y-auto overscroll-contain rounded-t-2xl bg-warm animate-[fade-in_0.25s_ease-out] sm:max-h-[90vh] sm:rounded-none ${sizeClass}`}
       >
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-white px-4 py-4 sm:px-6 sm:py-5">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-warm px-4 pt-5 pb-4 sm:px-6 sm:pt-5 sm:py-5">
+          <div
+            className="absolute top-2.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-line sm:hidden"
+            aria-hidden
+          />
           <h2
             id={titleId}
-            className="pr-2 font-serif text-xl text-ink sm:text-2xl"
+            className="relative pr-2 font-serif text-xl text-ink sm:text-2xl"
           >
             {title}
           </h2>

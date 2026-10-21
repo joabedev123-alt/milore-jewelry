@@ -7,23 +7,23 @@ export function About() {
   return (
     <section
       id="about"
-      className="section-pad bg-white"
+      className="section-pad bg-dusty/25"
       aria-labelledby="about-heading"
     >
       <div className="container-site">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="relative lg:col-span-6">
-            <div className="relative aspect-[4/5] overflow-hidden bg-rose-soft lg:aspect-[5/6]">
+            <div className="media-frame lg:aspect-[5/6]">
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="media-cover"
                 loading="lazy"
               />
               {image.isDemo && (
-                <span className="absolute bottom-3 left-3 bg-white/90 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-muted">
+                <span className="absolute bottom-3 left-3 bg-sand/95 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-muted">
                   Demo imagery
                 </span>
               )}
@@ -32,18 +32,15 @@ export function About() {
 
           <div className="lg:col-span-6 lg:pl-4">
             <p className="eyebrow">{eyebrow}</p>
-            <h2
-              id="about-heading"
-              className="mt-4 font-serif text-4xl text-ink md:text-5xl"
-            >
+            <h2 id="about-heading" className="section-title mt-3 sm:mt-4">
               {title}
             </h2>
-            <div className="mt-7 space-y-5 text-[16px] leading-relaxed text-muted">
+            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-muted sm:mt-7 sm:space-y-5 sm:text-[16px]">
               {paragraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
             </div>
-            <a href={cta.href} className="btn-primary mt-9 inline-flex">
+            <a href={cta.href} className="btn-primary mt-8 inline-flex w-full sm:mt-9 sm:w-auto">
               {cta.label}
             </a>
           </div>

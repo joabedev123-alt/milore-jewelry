@@ -6,7 +6,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="section-pad bg-dusty/25"
+      className="section-pad bg-dusty/40"
       aria-labelledby="contact-heading"
     >
       <div className="container-site">
@@ -14,11 +14,11 @@ export function Contact() {
           <p className="eyebrow">Let&apos;s Connect</p>
           <h2
             id="contact-heading"
-            className="mt-4 font-serif text-4xl text-ink md:text-5xl text-balance"
+            className="section-title mt-3 sm:mt-4"
           >
             Your next favorite starts here.
           </h2>
-          <p className="mt-5 text-[16px] text-muted">
+          <p className="mt-4 text-[15px] text-muted sm:mt-5 sm:text-[16px]">
             Have a question about a piece or need help choosing? We&apos;d love
             to hear from you.
           </p>
@@ -40,12 +40,12 @@ export function Contact() {
             </ExternalLink>
           </div>
 
-          <div className="mt-10 space-y-2 text-[15px] text-muted">
+          <div className="mt-8 space-y-1 text-[15px] text-muted sm:mt-10 sm:space-y-2">
             <p>{siteConfig.brand.location}</p>
             <p>
               <ExternalLink
                 href={siteConfig.contact.whatsapp.url}
-                className="transition-colors duration-200 hover:text-ink"
+                className="link-touch justify-center"
               >
                 {siteConfig.contact.whatsapp.display}
               </ExternalLink>

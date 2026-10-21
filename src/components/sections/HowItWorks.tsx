@@ -11,14 +11,14 @@ const iconMap: Record<string, IconName> = {
 export function HowItWorks() {
   return (
     <section
-      className="section-pad bg-warm"
+      className="section-pad bg-sand/45"
       aria-labelledby="howto-heading"
     >
       <div className="container-site">
         <div className="mx-auto max-w-2xl text-center">
           <h2
             id="howto-heading"
-            className="font-serif text-4xl text-ink md:text-5xl text-balance"
+            className="section-title"
           >
             Find a piece that feels like you.
           </h2>
@@ -27,10 +27,10 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+        <ol className="mt-10 grid gap-8 sm:mt-14 sm:gap-10 md:grid-cols-3 md:gap-8">
           {howItWorks.map((step) => (
             <li key={step.step} className="text-center md:text-left">
-              <div className="mx-auto flex h-12 w-12 items-center justify-center border border-line bg-white text-dusty md:mx-0">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center border border-line bg-dusty text-white md:mx-0">
                 <Icon name={iconMap[step.icon]} size={18} />
               </div>
               <p className="mt-5 font-sans text-[11px] font-medium tracking-[0.18em] text-dusty uppercase">

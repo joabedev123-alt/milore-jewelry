@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Icon } from "@/components/icons/BootstrapIcon";
@@ -21,10 +21,23 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const [headerOffset, setHeaderOffset] = useState(108);
   const menuId = useId();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    const measure = () => setHeaderOffset(el.offsetHeight);
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -93,17 +106,15 @@ export function Header() {
     return active === id;
   };
 
-  const headerOffset = headerRef.current?.offsetHeight ?? 108;
-
   return (
     <header ref={headerRef} className="sticky top-0 z-40">
       {/* Top bar */}
-      <div className="bg-sand/45 text-center">
-        <div className="container-site flex flex-col items-center justify-center gap-0.5 py-2 text-[11px] tracking-[0.03em] text-ink/80 sm:flex-row sm:gap-x-4 sm:py-2.5 sm:text-[12px] sm:tracking-[0.04em]">
+      <div className="bg-dusty text-center">
+        <div className="container-site flex flex-col items-center justify-center gap-0.5 py-1.5 text-[11px] tracking-[0.03em] text-white sm:flex-row sm:gap-x-4 sm:py-2.5 sm:text-[12px] sm:tracking-[0.04em]">
           <span>{siteConfig.announcements.topBar}</span>
           <a
             href={siteConfig.announcements.topBarLink.href}
-            className="btn-ghost min-h-0 py-1 text-[10px] tracking-[0.08em] uppercase sm:text-[11px]"
+            className="inline-flex min-h-11 cursor-pointer items-center px-2 text-[10px] font-medium tracking-[0.08em] text-white uppercase underline-offset-4 transition-colors duration-200 hover:text-sand hover:underline sm:min-h-0 sm:px-0 sm:text-[11px]"
           >
             {siteConfig.announcements.topBarLink.label}
           </a>
@@ -112,10 +123,10 @@ export function Header() {
 
       {/* Main header */}
       <div
-        className={`border-b bg-white/95 backdrop-blur-sm transition-[border-color,box-shadow] duration-250 ${
+        className={`border-b bg-sand/95 backdrop-blur-sm transition-[border-color,box-shadow] duration-250 ${
           scrolled
-            ? "border-line shadow-[0_1px_0_rgba(37,35,34,0.04)]"
-            : "border-transparent"
+            ? "border-line shadow-[0_1px_0_rgba(31,26,23,0.06)]"
+            : "border-dusty/40"
         }`}
       >
         <div className="container-site flex h-14 items-center justify-between gap-3 sm:h-[4.25rem] md:h-[4.75rem]">
@@ -186,7 +197,7 @@ export function Header() {
           />
           <div
             ref={panelRef}
-            className="relative ml-auto flex h-full w-full max-w-sm flex-col overflow-y-auto bg-white px-5 py-6 shadow-[-4px_0_24px_rgba(37,35,34,0.06)] safe-bottom sm:px-6 sm:py-8"
+            className="relative ml-auto flex h-full w-[min(100%,22rem)] flex-col overflow-y-auto overscroll-contain bg-warm px-5 py-6 shadow-[-4px_0_24px_rgba(37,35,34,0.06)] safe-bottom sm:w-full sm:max-w-sm sm:px-6 sm:py-8"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"

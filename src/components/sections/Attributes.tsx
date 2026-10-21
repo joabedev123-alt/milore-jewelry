@@ -10,7 +10,7 @@ const iconMap: Record<string, IconName> = {
 export function Attributes() {
   return (
     <section
-      className="border-y border-line bg-white"
+      className="border-y border-line bg-dusty text-white"
       aria-label="Brand attributes"
     >
       <div className="container-site">
@@ -23,9 +23,9 @@ export function Attributes() {
               <Icon
                 name={iconMap[item.icon]}
                 size={16}
-                className="shrink-0 text-dusty sm:w-[18px] sm:h-[18px]"
+                className="shrink-0 text-sand sm:w-[18px] sm:h-[18px]"
               />
-              <span className="font-sans text-[11px] font-medium tracking-[0.08em] text-ink uppercase sm:text-[13px] sm:tracking-[0.1em]">
+              <span className="font-sans text-[11px] font-medium tracking-[0.08em] text-white uppercase sm:text-[13px] sm:tracking-[0.1em]">
                 {item.label}
               </span>
             </li>

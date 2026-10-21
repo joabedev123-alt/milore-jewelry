@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -30,24 +30,28 @@ export function ProductModal() {
       variant="drawer"
     >
       <div className="space-y-6">
-        <div className="relative aspect-[4/5] overflow-hidden bg-rose-soft">
+        <div className="media-frame-drawer">
           <Image
             src={active.src}
             alt={active.alt}
             fill
             sizes="(max-width: 512px) 100vw, 500px"
-            className="object-cover"
+            className="media-cover"
             priority
           />
           {active.isDemo && (
-            <span className="absolute bottom-3 left-3 bg-white/90 px-2 py-0.5 text-[9px] uppercase tracking-[0.12em] text-muted">
+            <span className="absolute bottom-3 left-3 bg-sand/95 px-2 py-0.5 text-[9px] uppercase tracking-[0.12em] text-muted">
               Demo imagery
             </span>
           )}
         </div>
 
         {images.length > 1 && (
-          <div className="flex gap-2" role="tablist" aria-label="Product images">
+          <div
+            className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1"
+            role="tablist"
+            aria-label="Product images"
+          >
             {images.map((img, i) => (
               <button
                 key={img.src + i}
@@ -56,7 +60,7 @@ export function ProductModal() {
                 aria-selected={i === activeIndex}
                 aria-label={`View image ${i + 1}`}
                 onClick={() => setActiveIndex(i)}
-                className={`relative h-16 w-14 cursor-pointer overflow-hidden ${
+                className={`relative h-14 w-14 shrink-0 cursor-pointer overflow-hidden sm:h-16 sm:w-14 ${
                   i === activeIndex ? "ring-1 ring-dusty" : "opacity-70"
                 }`}
               >

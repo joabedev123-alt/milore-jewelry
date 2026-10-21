@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import { Icon } from "@/components/icons/BootstrapIcon";
@@ -12,7 +12,7 @@ export function Categories() {
   return (
     <section
       id="collections"
-      className="section-pad bg-white"
+      className="section-pad bg-warm/80"
       aria-labelledby="collections-heading"
     >
       <div className="container-site">
@@ -20,7 +20,7 @@ export function Categories() {
           <p className="eyebrow">Find Your Signature</p>
           <h2
             id="collections-heading"
-            className="mt-3 font-serif text-[2rem] text-ink sm:mt-4 sm:text-4xl md:text-5xl text-balance"
+            className="section-title mt-3 sm:mt-4"
           >
             Little details. Beautiful possibilities.
           </h2>
@@ -30,7 +30,7 @@ export function Categories() {
           </p>
         </div>
 
-        <ul className="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+        <ul className="mt-10 grid grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {activeCategories.map((cat) => {
             const isActive = filter === cat.id;
             return (
@@ -43,27 +43,27 @@ export function Categories() {
                   }`}
                   aria-pressed={isActive}
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden bg-rose-soft">
+                  <div className="media-frame">
                     <Image
                       src={cat.image.src}
                       alt={cat.image.alt}
                       fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="media-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                       loading="lazy"
                     />
                     {cat.image.isDemo && (
-                      <span className="absolute top-2 left-2 bg-white/90 px-1.5 py-0.5 text-[8px] uppercase tracking-[0.12em] text-muted sm:top-3 sm:left-3 sm:px-2 sm:text-[9px]">
+                      <span className="absolute top-2 left-2 bg-sand/95 px-1.5 py-0.5 text-[8px] uppercase tracking-[0.12em] text-muted sm:top-3 sm:left-3 sm:px-2 sm:text-[9px]">
                         Demo
                       </span>
                     )}
                   </div>
-                  <div className="flex items-center justify-between gap-2 border border-t-0 border-line px-2.5 py-3 sm:px-4 sm:py-4">
+                  <div className="flex items-center justify-between gap-2 border border-t-0 border-line bg-sand px-2.5 py-3 sm:px-4 sm:py-4">
                     <div className="min-w-0">
                       <span className="font-serif text-base text-ink sm:text-xl">
                         {cat.name}
                       </span>
-                      <p className="mt-0.5 hidden text-[13px] text-muted sm:block">
+                      <p className="mt-0.5 line-clamp-2 text-[12px] text-muted sm:text-[13px]">
                         {cat.description}
                       </p>
                     </div>

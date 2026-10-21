@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import { editorialFeature } from "@/config/site";
 import { Icon } from "@/components/icons/BootstrapIcon";
 
@@ -7,39 +7,39 @@ export function Editorial() {
 
   return (
     <section
-      className="relative overflow-hidden bg-ink"
+      className="relative overflow-hidden bg-dusty"
       aria-labelledby="editorial-heading"
     >
       <div className="grid lg:grid-cols-2">
-        <div className="relative aspect-[4/5] lg:aspect-auto lg:min-h-[560px]">
+        <div className="relative aspect-[4/5] max-h-[min(70vw,55vh)] min-h-[240px] sm:max-h-none sm:min-h-0 lg:aspect-auto lg:min-h-[480px] xl:min-h-[520px]">
           <Image
             src={image.src}
             alt={image.alt}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
+            className="object-cover object-[center_25%]"
             loading="lazy"
           />
           {image.isDemo && (
-            <span className="absolute bottom-3 left-3 bg-white/90 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-muted">
+            <span className="absolute bottom-3 left-3 bg-sand/95 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-muted">
               Demo imagery
             </span>
           )}
         </div>
 
-        <div className="flex flex-col justify-center bg-ink px-8 py-16 text-white sm:px-12 lg:px-16 xl:px-20">
+        <div className="flex flex-col justify-center bg-dusty px-5 py-12 text-white sm:px-12 sm:py-16 lg:px-16 xl:px-20">
           <h2
             id="editorial-heading"
-            className="font-serif text-4xl leading-tight md:text-5xl text-balance"
+            className="font-serif text-[2rem] leading-tight text-balance sm:text-4xl md:text-5xl"
           >
             {title}
           </h2>
-          <p className="mt-6 max-w-md text-[16px] leading-relaxed text-white/70">
+          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/85 sm:mt-6 sm:text-[16px]">
             {text}
           </p>
           <a
             href={cta.href}
-            className="mt-10 inline-flex w-fit items-center gap-2 border border-white/30 px-7 py-3.5 text-[13px] font-medium tracking-[0.08em] text-white uppercase transition-colors duration-250 hover:border-dusty hover:text-dusty"
+            className="mt-8 inline-flex min-h-11 w-full items-center justify-center gap-2 border border-white/50 bg-ink px-7 py-3.5 text-[12px] font-medium tracking-[0.08em] text-white uppercase transition-colors duration-250 hover:bg-sand hover:text-ink hover:border-sand sm:mt-10 sm:w-fit sm:text-[13px]"
           >
             {cta.label}
             <Icon name="arrow-right" size={14} />
